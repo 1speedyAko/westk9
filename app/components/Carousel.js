@@ -1,37 +1,21 @@
-"use client"
-import * as React from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import Image from "next/image"
-import { useState, useEffect } from "react"
+'use client';
 
-const ImageSlider = () => {
-  const [api, setApi] = useState(null)
-  const [current, setCurrent] = useState(0)
-  const [count, setCount] = useState(0)
+import React from 'react';
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+import { Card, CardContent } from "@/components/ui/card";
 
-  useEffect(() => {
-    if (!api) {
-      return
-    }
+export default function Carousel() {
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    mode: "snap",
+    slides: {
+      perView: 1,
+      spacing: 15,
+    },
+  });
 
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
-
-  
-
-  const images = [
+  const slides = [
     {
       src: "https://media.istockphoto.com/id/2151321859/photo/portrait-of-young-belgian-shepherd-malinois-dog.jpg?s=612x612&w=0&k=20&c=6GVtDg_kv0vFlPVUFy65LaTmFFjvg97ojw0eHXbVic4=",
       alt: "Slide 1",
@@ -52,50 +36,20 @@ const ImageSlider = () => {
       alt: "Slide 4",
       caption: "Ocean sunset",
     },
-  ]
+  ];
 
   return (
-        <div className="w-full max-w-5xl mx-auto px-4">
-        <Carousel 
-        setApi={setApi}
-        className="w-full"
-        opts={{
-            align: "start",
-            loop: true,
-        }}
-        >
-        <CarouselContent>
-            {images.map((image, index) => (
-            <CarouselItem key={index}>
-                <div className="p-1">
-                <Card className="border-0">
-                    <CardContent className="relative aspect-[16/9] p-0">
-                    <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        className="object-cover rounded-lg"
-                        priority={index === 0}
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent rounded-b-lg">
-                        <p className="text-white text-lg font-semibold">
-                        {image.caption}
-                        </p>
-                    </div>
-                    </CardContent>
-                </Card>
-                </div>
-            </CarouselItem>
-            ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-        </Carousel>
-        <div className="py-2 text-center text-sm text-muted-foreground">
-        Slide {current} of {count}
-        </div>
+    <div ref={sliderRef} className="keen-slider max-w-lg mx-auto">
+      {slides.map(({ src, alt, caption }, index) => (
+        <Card key={index} className="keen-slider__slide">
+          <CardContent className="p-0 relative">
+            <img src={src} alt={alt} className="w-full h-auto rounded-2xl" />
+            <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-sm px-2 py-1 rounded">
+              {caption}
+            </div>
+          </CardContent>
+        </Card>
+      ))}
     </div>
-      )
-    }
-    
-    export default ImageSlider
+  );
+}
