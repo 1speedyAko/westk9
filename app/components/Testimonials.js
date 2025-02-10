@@ -51,8 +51,8 @@ const TestimonialCard = ({ testimonial, name, imageUrl, className = "" }) => (
 
 const Testimonials = () => {
   return (
-    <div className="py-20 bg-gray-50 dark:bg-zinc-900">
-      <h2 className="text-3xl text-center font-bold text-gray-900 dark:text-gray-100 mb-10">
+    <div className="py-20 bg-slate-950 dark:bg-zinc-900">
+      <h2 className="text-3xl text-center font-bold text-neutral-300 dark:text-gray-100 mb-10">
         What Our Clients Say
       </h2>
       <div className="grid md:grid-cols-3 gap-10 px-6">

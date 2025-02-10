@@ -14,7 +14,7 @@ const Gallery = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+    
       <div className="flex-grow py-16">
         <h1 className="text-3xl text-center py-4 font-bold mt-7">Gallery</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 mt-10">

@@ -1,13 +1,14 @@
 import React from 'react'
+import ImageSlider from './Carousel'
 
 function Hello() {
   return (
     <div className='w-full bg-slate-600'>
         <div className="relative z-10">
             <h1 className="text-gray-300 text-2xl capitalize font-bold pt-40 px-10">
-              {/* <ReactTyped strings={['Who are we ?']} typeSpeed={100} loop /> */} who are we
+              {/* <ReactTyped strings={['Who are we ?']} typeSpeed={100} loop /> */}
             </h1>
-            <div className="block px-10 mt-5 font-medium text-slate-100">
+            {/* <div className="block px-10 mt-5 font-medium text-slate-100">
               <p className='bg-gray-500'> 
                 Welcome to West k9, where we believe in the ability of every dog to be
                 a well-behaved and happy member of your family. Founded in ____, our
@@ -23,8 +24,10 @@ function Hello() {
                 industry standards to ensure we offer the finest possible guidance &
                 support.
               </p>
-            </div>
+            </div> */}
+            <ImageSlider/>
     </div>
+
     </div>
   )
 }
