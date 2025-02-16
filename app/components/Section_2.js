@@ -11,7 +11,7 @@ function Section_2() {
         <p className="order-1 text-5xl text-emerald-400 font-bold">Happy Clients</p>
         <FontAwesomeIcon icon={faUsers} className="order-2 text-5xl text-blue-500 p-9" />
         <div className="order-3 text-3xl text-white">
-          <CountUp start={0} end={60} duration={2} delay={0} className="text-4xl font-bold" />+
+          <CountUp start={0} end={65} duration={2} delay={0} className="text-4xl font-bold" />+
         </div>
       </div>
 
@@ -27,7 +27,7 @@ function Section_2() {
         <p className="order-1 text-5xl text-emerald-400 text-center font-bold">Years</p>
         <FontAwesomeIcon icon={faClock} className="order-2 text-6xl text-blue-500 p-9" />
         <div className="order-3 text-3xl text-white">
-          <CountUp start={0} end={5} duration={5} delay={0} className="text-4xl font-bold" />+
+          <CountUp start={0} end={6} duration={5} delay={0} className="text-4xl font-bold" />+
         </div>
       </div>
     </div>

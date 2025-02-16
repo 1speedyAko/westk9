@@ -38,7 +38,7 @@ const ContactForm = () => {
                 id="lastName"
                 placeholder="Doe"
                 required
-                className="w-full bg-neutral-200"
+                className="w-full text-neutral-200"
               />
             </div>
           </div>
@@ -75,7 +75,7 @@ const ContactForm = () => {
             />
           </div>
           
-          <Button type="submit" className="w-full bg-blue-400">
+          <Button type="submit" className="w-full hover:bg-slate-800 bg-blue-500">
             Send Message
             <Send className="ml-2 h-4 w-4" />
           </Button>

@@ -26,6 +26,7 @@ const Header = () => {
     { name: "About", section: "about", type: "scroll" },
     { name: "Testimonials", section: "testimonials", type: "scroll" },
     { name: "FAQs", section: "faqs", type: "scroll" },
+    {name: "Contact", section:"contact", type:"scroll"},
     { name: "Gallery", route: "/gallery", type: "route" },
   ];
 

@@ -34,7 +34,7 @@ export default function Home() {
         <section id="faqs">
           <Faqs />
         </section>
-        <section>
+        <section id="contact">
           <ContactPage/>
         </section>
        

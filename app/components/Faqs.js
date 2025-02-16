@@ -9,22 +9,22 @@ import {
 const Faq = () => {
   const faqItems = [
     {
-      question: "What is Next.js?",
+      question: "How long does it take to teach basic obedience ?",
       answer:
         "Next.js is a React framework that enables functionality such as server-side rendering and generating static websites.",
     },
     {
-      question: "How do I install Shadcn UI?",
+      question: "How much does it cost to have my dog trained ?",
       answer:
         "You can install Shadcn UI by following the installation instructions provided in the official documentation.",
     },
     {
-      question: "Can I use Shadcn UI with other frameworks?",
+      question: "What are the best and healthy meals for my dog ?",
       answer:
         "Yes, Shadcn UI is framework-agnostic and can be used with any React-based framework or library.",
     },
     {
-      question: "Is Shadcn UI free to use?",
+      question: "Is regular exercise important for my dog ?",
       answer:
         "Yes, Shadcn UI is open-source and free to use under the MIT license.",
     },

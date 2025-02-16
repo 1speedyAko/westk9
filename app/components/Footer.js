@@ -2,9 +2,11 @@ import React from "react";
 import { faHome, faInfoCircle,  faPhone, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faTwitter, faYoutube, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaEnvelope } from "react-icons/fa";
 import Link from "next/link"; // Corrected import statement
 // faShoppingCart, faImages,
 import { faImages } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -13,7 +15,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
           {/* Useful Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Useful Links</h4>
+            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="list-none">
               <li className="mb-2">
                 <Link href="/" className="hover:text-gray-400">
@@ -21,12 +23,12 @@ const Footer = () => {
                   Home
                 </Link>
               </li>
-              <li className="mb-2">
+              {/* <li className="mb-2">
                 <Link href="/about" className="hover:text-gray-400">
                   <FontAwesomeIcon icon={faInfoCircle} className="mr-2" />
-                  About
+                  Gallery
                 </Link>
-              </li>
+              </li> */}
               {/* <li className="mb-2">
                 <Link href="#" className="hover:text-gray-400">
                   <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
@@ -54,6 +56,9 @@ const Footer = () => {
           {/* Physical Address and Contact */}
           <div>
             <h4 className="text-lg font-bold mb-4">Contact</h4>
+            <Link href="mailto:contact@westk9.co.ke">
+               <FontAwesomeIcon icon={faEnvelope} className="mr-2"/> contact@westk9.co.ke
+            </Link>
             <p>
               <FontAwesomeIcon icon={faAddressCard} className="mr-2" />
               Sondu, Kisumu City
