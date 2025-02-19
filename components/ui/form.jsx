@@ -1,90 +1,134 @@
 "use client";
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { Controller, FormProvider, useFormContext } from "react-hook-form";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Send } from "lucide-react";
+import { cn } from "@/lib/utils"
+import { Label } from "@/components/ui/label"
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
+const Form = FormProvider
 
-export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: zodResolver(contactSchema),
-  });
+const FormFieldContext = React.createContext({})
 
-  const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
-    setSubmitted(true);
-  };
-
+const FormField = (
+  {
+    ...props
+  }
+) => {
   return (
-    <div className="flex justify-center items-center min-h-screen  p-6">
-      <Card className="w-full max-w-lg shadow-lg">
-        <CardHeader className="text-center">
-          <CardTitle className="flex items-center justify-center gap-2 text-xl font-bold">
-            <Mail className="w-6 h-6 text-primary" /> Contact Us
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          {!submitted ? (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              <div>
-                <label className="block font-medium">Name</label>
-                <Input {...register("name")} placeholder="Your Name" />
-                {errors.name && (
-                  <p className="text-red-500 text-sm">{errors.name.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block font-medium">Email</label>
-                <Input {...register("email")} placeholder="Your Email" />
-                {errors.email && (
-                  <p className="text-red-500 text-sm">{errors.email.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block font-medium">Message</label>
-                <Textarea {...register("message")} placeholder="Your Message" />
-                {errors.message && (
-                  <p className="text-red-500 text-sm">{errors.message.message}</p>
-                )}
-              </div>
-
-              <Button type="submit" className="w-full flex items-center gap-2">
-                Send Message <Send className="w-5 h-5" />
-              </Button>
-            </form>
-          ) : (
-            <div className="text-center text-green-600">
-              <p className="text-lg font-semibold">Thank you for reaching out!</p>
-              <p>We will get back to you soon.</p>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-    </div>
+    (<FormFieldContext.Provider value={{ name: props.name }}>
+      <Controller {...props} />
+    </FormFieldContext.Provider>)
   );
 }
-// import React from 'react'
 
-// export const Contact = () => {
-//   return (
-//     <div>Contact</div>
-//   )
-// }
+const useFormField = () => {
+  const fieldContext = React.useContext(FormFieldContext)
+  const itemContext = React.useContext(FormItemContext)
+  const { getFieldState, formState } = useFormContext()
+
+  const fieldState = getFieldState(fieldContext.name, formState)
+
+  if (!fieldContext) {
+    throw new Error("useFormField should be used within <FormField>")
+  }
+
+  const { id } = itemContext
+
+  return {
+    id,
+    name: fieldContext.name,
+    formItemId: `${id}-form-item`,
+    formDescriptionId: `${id}-form-item-description`,
+    formMessageId: `${id}-form-item-message`,
+    ...fieldState,
+  }
+}
+
+const FormItemContext = React.createContext({})
+
+const FormItem = React.forwardRef(({ className, ...props }, ref) => {
+  const id = React.useId()
+
+  return (
+    (<FormItemContext.Provider value={{ id }}>
+      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+    </FormItemContext.Provider>)
+  );
+})
+FormItem.displayName = "FormItem"
+
+const FormLabel = React.forwardRef(({ className, ...props }, ref) => {
+  const { error, formItemId } = useFormField()
+
+  return (
+    (<Label
+      ref={ref}
+      className={cn(error && "text-destructive", className)}
+      htmlFor={formItemId}
+      {...props} />)
+  );
+})
+FormLabel.displayName = "FormLabel"
+
+const FormControl = React.forwardRef(({ ...props }, ref) => {
+  const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
+
+  return (
+    (<Slot
+      ref={ref}
+      id={formItemId}
+      aria-describedby={
+        !error
+          ? `${formDescriptionId}`
+          : `${formDescriptionId} ${formMessageId}`
+      }
+      aria-invalid={!!error}
+      {...props} />)
+  );
+})
+FormControl.displayName = "FormControl"
+
+const FormDescription = React.forwardRef(({ className, ...props }, ref) => {
+  const { formDescriptionId } = useFormField()
+
+  return (
+    (<p
+      ref={ref}
+      id={formDescriptionId}
+      className={cn("text-[0.8rem] text-muted-foreground", className)}
+      {...props} />)
+  );
+})
+FormDescription.displayName = "FormDescription"
+
+const FormMessage = React.forwardRef(({ className, children, ...props }, ref) => {
+  const { error, formMessageId } = useFormField()
+  const body = error ? String(error?.message) : children
+
+  if (!body) {
+    return null
+  }
+
+  return (
+    (<p
+      ref={ref}
+      id={formMessageId}
+      className={cn("text-[0.8rem] font-medium text-destructive", className)}
+      {...props}>
+      {body}
+    </p>)
+  );
+})
+FormMessage.displayName = "FormMessage"
+
+export {
+  useFormField,
+  Form,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+  FormField,
+}
