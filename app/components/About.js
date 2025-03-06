@@ -21,7 +21,7 @@ function About() {
           
           <div className='grid place-content-center'>
             <Image
-              src="https://images.unsplash.com/photo-1601758124096-1fd661873b95?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZG9nc3xlbnwwfHwwfHx8MA%3D%3D"
+              src="/snifferup.JPG"
               alt="dog pet"
               width={500}
               height = {550}

@@ -4,12 +4,12 @@ import React from 'react';
 
 const Gallery = () => {
   const cards = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1601758176559-76c75ead317a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nc3xlbnwwfHwwfHx8MA%3D%3D', name: 'Pet' },
-    { id: 2, image: 'https://images.unsplash.com/photo-1601758176481-e81a6b713126?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRvZ3N8ZW58MHx8MHx8fDA%3D', name: 'Pet Page' },
-    { id: 3, image: 'https://plus.unsplash.com/premium_photo-1668606717900-0ecf91e55655?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRvZ3N8ZW58MHx8MHx8fDA%3D', name: 'Helen Troy' },
-    { id: 4, image: 'https://images.unsplash.com/photo-1649571068605-844f3be0faa1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2VybWFuJTIwc2hlcGhlcmQlMjBkb2d8ZW58MHx8MHx8fDA%3D', name: 'Matthew Perry' },
-    { id: 5, image: 'https://media.istockphoto.com/id/1445271521/photo/rottweiler-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=0k-POeCB3Wpd1-EQefSQ5rsMI_A3f9_JrVRQLJ3e3Rc=', name: 'Molly Brown' },
-    { id: 6, image: 'https://media.istockphoto.com/id/2151321859/photo/portrait-of-young-belgian-shepherd-malinois-dog.webp?a=1&b=1&s=612x612&w=0&k=20&c=nYDbWjFGmHcRA50TkHXthc7250edYt4uEbGbB0VnGxA=', name: 'Steve Jobs' },
+    { id: 1, image: "/IMG_0734.JPG", name: 'Pet' },
+    { id: 2, image: "/IMG_0810.JPG", name: 'Pet Page' },
+    { id: 3, image: "/IMG_0811.JPG", name: 'Helen Troy' },
+    { id: 4, image: "/sleeve.JPG", name: 'Matthew Perry' },
+    { id: 5, image: "/IMG_0825.JPG", name: 'Molly Brown' },
+    { id: 6, image: "/IMG_0839.JPG", name: 'Steve Jobs' },
   ];
 
   return (
