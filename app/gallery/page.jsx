@@ -1,6 +1,7 @@
 import React from 'react';
 // import Navbar from '../navbar/Nav';
 // import Footer from '../navbar/Footer';
+import Image from 'next/image';
 
 const Gallery = () => {
   const cards = [
@@ -20,10 +21,15 @@ const Gallery = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 mt-10">
           {cards.map((card) => (
             <div key={card.id} className="rounded overflow-hidden shadow-lg">
-              <img
+              <Image
                 src={card.image}
                 alt={card.name}
                 className="w-full h-64 object-cover"
+                quality={90}
+                height={256}  // Increased height
+                width={400}   
+                loading='lazy'
+              
               />
               {/* <div className="p-4">
                 <h3 className="text-lg font-semibold">{card.name}</h3>

@@ -22,7 +22,11 @@ function Section_1() {
            src="/sable.JPG"
            height={200}
            width={300}
-           alt="dog"/>
+           alt="dog"
+           priority={true}
+           blurDataURL='/sable.JPG'
+           quality={50}
+           />
           </p>
         </div>
         <div className="mb-4">
