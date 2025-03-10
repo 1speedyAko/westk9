@@ -49,7 +49,7 @@ const ContactForm = () => {
     setError("");
     
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
