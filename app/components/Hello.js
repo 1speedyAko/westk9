@@ -8,15 +8,14 @@ function Hello() {
     <div className='relative min-h-screen bg-slate-600'>
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <Image 
+      <Image 
           src='/IMG_0810.JPG'
           alt='backgroundImage'
-          layout='fill'
-          objectFit='cover'
-          objectPosition='top'
+          fill
           quality={100}
-         className="w-full h-full scale-x-[-1]"
+          className="w-full h-full object-cover scale-x-[-1]" // Flips image horizontally
         />
+
       </div>
 
       {/* Overlay */}
