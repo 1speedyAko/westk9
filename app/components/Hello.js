@@ -27,21 +27,23 @@ function Hello() {
           <ReactTyped strings={['Who are we?']} typeSpeed={100} loop /> 
         </h1>
         <p className="mt-5 text-lg leading-relaxed max-w-3xl">
-          Welcome to West K9, where we believe in the ability of every dog to be
-          a well-behaved and happy member of your family. Founded in 2018, our
-          sole dedication is to provide top-notch training services to dogs of
-          all ages, breeds, and temperaments in Kisumu County, Kenya.
-        </p>
-        <p className="mt-3 text-lg leading-relaxed max-w-3xl">
-          Our mission at WK9 is to enhance the bond between dogs and their owners through 
-          effective, compassionate techniques. We strive to create a positive and supportive 
-          environment where dogs can learn and grow together.
-        </p>
-        <p className="mt-3 text-lg leading-relaxed max-w-3xl">
-          At our facility, our team of experienced trainers brings a wealth of knowledge and 
-          passion to every training session. We stay up-to-date with the latest training methods 
-          to ensure we offer the best possible guidance and support for our furry friends.
-        </p>
+  Welcome to West K9, where we believe every dog has the potential to be 
+  a well-behaved and happy member of your family. Founded in 2018, we are 
+  dedicated to providing top-notch training services for dogs of all ages, 
+  breeds, and temperaments in Kisumu County, Kenya.
+</p>
+<p className="mt-3 text-lg leading-relaxed max-w-3xl">
+  Our mission at WK9 is to strengthen the bond between dogs and their owners 
+  through effective, compassionate training techniques. We strive to create a 
+  positive and supportive environment where dogs can learn and grow alongside 
+  their families.
+</p>
+<p className="mt-3 text-lg leading-relaxed max-w-3xl">
+  At our facility, our team of experienced trainers brings a wealth of knowledge 
+  and passion to every training session. We stay up to date with the latest 
+  training methods to provide the best possible guidance and support for our furry friends.
+</p>
+
       </div>
     </div>
   )
