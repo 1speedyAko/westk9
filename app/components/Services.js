@@ -7,22 +7,22 @@ function Services() {
   const services = [
     {
       title: "Dog Grooming",
-      image: "/cougar.jpg",
+      image: "/cougar.JPG",
       details: "Nail clipping, Full body wash"
     },
     {
       title: "Dog Training",
-      image: "/blook.jpg",
+      image: "/blook.JPG",
       details: "Basic to advanced training"
     },
     {
       title: "Handler Training",
-      image: "/taliban.jpg",
+      image: "/taliban.JPG",
       details: "Understanding behaviour and communication"
     },
     {
       title: "Dog Breeding",
-      image: "/lookup.jpg",
+      image: "/lookup.JPG",
       details: "Stud services, Puppy rehoming"
     }
   ];

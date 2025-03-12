@@ -10,12 +10,16 @@ function About() {
         <div className=" gap-3">
           <h2 className="text-3xl ">Why us?</h2>
         <p className="container mt-4">
-            At WK9, we understand that grooming is an esseential part of your dogs overall health and well-being.
-            Our comprehensive grooming services are designed to keep your dog looking and feeling their best while ensuring a comftable
-            and stress free for both you and your pet.
-            Here at WK9, our basic obedience training program is tailored to establish a strong foundation of good behaviours
-            and communication between you and your dog.
-            At WK9, we specialize in providing top notch handler training to ensure that your dog is well behaved, obedient and you have no problem during engagement.
+        At WK9, we know that your dog is more than just a pet—they're family. That’s why we provide expert care and training designed to make life easier for both you and your dog.
+
+🐶 Stress-Free Grooming – Our professional grooming services ensure your dog stays clean, healthy, and comfortable, making the experience smooth and enjoyable for both of you.
+
+🎯 Effective Obedience Training – We help lay the foundation for good behavior and clear communication, so your dog listens and responds reliably in any situation.
+
+🦴 Handler Training for Confidence & Control – We don’t just train dogs; we empower owners. Our handler training ensures you have the skills and confidence to guide your dog effectively in any setting.
+
+With WK9, you get more than just training—you get a partnership dedicated to your dog’s success and well-being.
+
           </p>
         </div>
           
