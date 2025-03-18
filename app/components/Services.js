@@ -47,6 +47,9 @@ function Services() {
       </div>
     </div>
   );
+    </div>
+  );
 }
 
+export default Services;
 export default Services;
