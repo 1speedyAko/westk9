@@ -19,10 +19,14 @@ function Section_1() {
           <p>
            {/*  image here, */}
            <Image className=""
-           src='https://media.istockphoto.com/id/918538458/photo/two-boerboel-puppies-relaxing-together-at-the-park.webp?a=1&b=1&s=612x612&w=0&k=20&c=p4e43MvO2vAVgS_oti0Zsiy98f5jBj6ykTPBv6wfbeQ='
+           src="/sable.JPG"
            height={200}
            width={300}
-           alt="dog"/>
+           alt="dog"
+           priority={true}
+           blurDataURL='/sable.JPG'
+           quality={50}
+           />
           </p>
         </div>
         <div className="mb-4">

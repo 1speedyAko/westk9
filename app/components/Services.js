@@ -1,61 +1,52 @@
-import React from 'react'
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 function Services() {
+  const services = [
+    {
+      title: "Dog Grooming",
+      image: "/cougar.JPG",
+      details: "Nail clipping, Full body wash"
+    },
+    {
+      title: "Dog Training",
+      image: "/blook.JPG",
+      details: "Basic to advanced training"
+    },
+    {
+      title: "Handler Training",
+      image: "/taliban.JPG",
+      details: "Understanding behaviour and communication"
+    },
+    {
+      title: "Dog Breeding",
+      image: "/lookup.JPG",
+      details: "Stud services, Puppy rehoming"
+    }
+  ];
+
   return (
     <div className="bg-emerald-200 py-8 w-full">
-        <h1 className="text-black text-3xl text-center pb-8 font-bold">
-          Our Services
-        </h1>
-        <div className="grid lg:grid-cols-4 text-black text-center text-xl gap-7 ">
-          <div>
-            <h1 className="font-bold">Dog Grooming</h1>
-            
-              <ul>
-                <li>Nail clipping</li>
-                <li>Full body wash</li>
-                <li></li>
-                <li></li>
-              </ul>
-          
-          </div>
-          <div>
-            <h1 className="font-bold">Dog Training</h1>
-            
-            <ul>
-                <li>Foundational Training</li>
-                <li>Basic Training</li>
-                <li>Intermidiate Training</li>
-                <li>Advanced Training</li>
-              </ul>
-            
-          </div>
-          <div>
-            <h1 className="font-bold">Handler Training</h1>
-            
-            <ul>
-                <li>Basics of dog Training</li> 
-                <li>Understanding behaviour and communication</li>
-                <li>Practical Training techniques</li>
-              </ul>
-           
-          </div>
-          <div>
-            <h1 className="font-bold">Dog Breeding</h1>
-            <ul className="text-center">
-                <li>Stud services</li>
-                <li>Puppy rehoming</li>
-                <li></li>
-                <li></li>
-              </ul>
-          </div>
-        </div>
-        {/* <div className="text-center mt-10 pt-4">
-          <button className="bg-gray-500 btn"> read more</button>
-        </div> */}
-        
+      <h1 className="text-black text-3xl text-center pb-8 font-bold">Our Services</h1>
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-7 px-4">
+        {services.map((service, index) => (
+          <Card key={index}
+          className="shadow-lg overflow-hidden flex flex-col transform transition duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="relative w-full h-64">
+              <Image src={service.image} alt={service.title} layout="fill" objectFit="cover" />
+            </div>
+            <CardContent className="p-4 text-center">
+              <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+              <p className="text-black text-sm mt-2">{service.details}</p>
+              <Button className="mt-4 transition duration-300 transform hover:scale-105 hover:bg-emerald-600 hover:text-white">Read More</Button>
+              </CardContent>
+          </Card>
+        ))}
       </div>
-  )
+    </div>
+  );
 }
 
-export default Services
-
+export default Services;
