@@ -26,7 +26,7 @@ const Gallery = () => {
                 alt={card.name}
                 className="w-full h-64 object-cover"
                 quality={90}
-                height={256}  // Increased height
+                height={256}  
                 width={400}   
                 loading='lazy'
               
