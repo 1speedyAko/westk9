@@ -46,7 +46,7 @@ const Footer = () => {
               className="text-white hover:text-gray-400"
             />
           </Link>
-          <Link href="#" className="text-lg">
+          <Link href="https://www.instagram.com/westk.9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-lg">
             <FontAwesomeIcon
               icon={faInstagram}
               className="text-white hover:text-gray-400"
@@ -58,7 +58,7 @@ const Footer = () => {
               className="text-white hover:text-gray-400"
             />
           </Link>
-          <Link href="#" className="text-lg">
+          <Link href="https://www.youtube.com/@Westk9" className="text-lg">
             <FontAwesomeIcon
               icon={faYoutube}
               className="text-white hover:text-gray-400"
