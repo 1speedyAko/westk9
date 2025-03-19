@@ -38,25 +38,40 @@ const Footer = () => {
             </ul>
           </div>
           {/* Physical Address and Contact */}
-          <div>
-            <h4 className="text-lg font-bold mb-4">Contact</h4>
-            <Link href="mailto:contact@westk9.co.ke" className="block hover:text-gray-400">
-              <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> 
-              contact@westk9.co.ke
-            </Link>
-            <p className="mt-2">
-              <FontAwesomeIcon icon={faAddressCard} className="mr-2" />
-              Sondu, Kisumu City
-            </p>
-            <p className="mt-2">
-              <FontAwesomeIcon icon={faPhone} className="mr-2" />
-              0702802588
-            </p>
-            <p className="mt-2">
-              <FontAwesomeIcon icon={faPhone} className="mr-2" />
-              0743833555
-            </p>
-          </div>
+       {/* Social Media Links */}
+        <div className="flex justify-end mt-8 space-x-4">
+          <Link href="#" className="text-lg">
+            <FontAwesomeIcon
+              icon={faFacebook}
+              className="text-white hover:text-gray-400"
+            />
+          </Link>
+          <Link href="#" className="text-lg">
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="text-white hover:text-gray-400"
+            />
+          </Link>
+          <Link href="#" className="text-lg">
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className="text-white hover:text-gray-400"
+            />
+          </Link>
+          <Link href="#" className="text-lg">
+            <FontAwesomeIcon
+              icon={faYoutube}
+              className="text-white hover:text-gray-400"
+            />
+          </Link>
+          <Link href="#" className="text-lg">
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="text-white hover:text-gray-400"
+            />
+          </Link>
+        </div>
+
           {/* Newsletter */}
           <div>
             <h4 className="text-lg font-bold mb-4">Subscribe to Our Newsletter</h4>
