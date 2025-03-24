@@ -1,6 +1,12 @@
 import React from "react";
-import { faHome, faInfoCircle, faPhone, faAddressCard, faImages, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faInstagram, faTwitter, faYoutube, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faHome, faImages } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+  faYoutube,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
@@ -9,7 +15,7 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white py-8 pb-0">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* Useful Links */}
+          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="list-none">
@@ -27,6 +33,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
           {/* Services */}
           <div>
             <h4 className="text-lg font-bold mb-4">Services</h4>
@@ -37,45 +44,11 @@ const Footer = () => {
               <li className="mb-2">Handler Training</li>
             </ul>
           </div>
-          {/* Physical Address and Contact */}
-       {/* Social Media Links */}
-        <div className="flex justify-end mt-8 space-x-4">
-          <Link href="#" className="text-lg">
-            <FontAwesomeIcon
-              icon={faFacebook}
-              className="text-white hover:text-gray-400"
-            />
-          </Link>
-          <Link href="https://www.instagram.com/westk.9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-lg">
-            <FontAwesomeIcon
-              icon={faInstagram}
-              className="text-white hover:text-gray-400"
-            />
-          </Link>
-          <Link href="#" className="text-lg">
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className="text-white hover:text-gray-400"
-            />
-          </Link>
-          <Link href="https://www.youtube.com/@Westk9" className="text-lg">
-            <FontAwesomeIcon
-              icon={faYoutube}
-              className="text-white hover:text-gray-400"
-            />
-          </Link>
-          <Link href="#" className="text-lg">
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="text-white hover:text-gray-400"
-            />
-          </Link>
-        </div>
 
           {/* Newsletter */}
           <div>
             <h4 className="text-lg font-bold mb-4">Subscribe to Our Newsletter</h4>
-            <form action="" method="post" className="flex">
+            <form className="flex">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -87,40 +60,27 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        {/* Social Media Links */}
+
+        {/* Social Media Links - Aligned to Bottom Left */}
         <div className="flex justify-end mt-8">
           <Link href="#" className="mr-4">
-            <FontAwesomeIcon
-              icon={faFacebook}
-              className="text-white text-2xl hover:text-gray-400"
-            />
+            <FontAwesomeIcon icon={faFacebook} className="text-white text-2xl hover:text-gray-400" />
+          </Link>
+          <Link href="https://www.instagram.com/westk.9" className="mr-4">
+            <FontAwesomeIcon icon={faInstagram} className="text-white text-2xl hover:text-gray-400" />
           </Link>
           <Link href="#" className="mr-4">
-            <FontAwesomeIcon
-              icon={faInstagram}
-              className="text-white text-2xl hover:text-gray-400"
-            />
+            <FontAwesomeIcon icon={faTwitter} className="text-white text-2xl hover:text-gray-400" />
+          </Link>
+          <Link href="https://www.youtube.com/@Westk9" className="mr-4">
+            <FontAwesomeIcon icon={faYoutube} className="text-white text-2xl hover:text-gray-400" />
           </Link>
           <Link href="#" className="mr-4">
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className="text-white text-2xl hover:text-gray-400"
-            />
-          </Link>
-          <Link href="#" className="mr-4">
-            <FontAwesomeIcon
-              icon={faYoutube}
-              className="text-white text-2xl hover:text-gray-400"
-            />
-          </Link>
-          <Link href="#">
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="text-white text-2xl hover:text-gray-400"
-            />
+            <FontAwesomeIcon icon={faLinkedin} className="text-white text-2xl hover:text-gray-400" />
           </Link>
         </div>
-        {/* Copyright and Developer Info */}
+
+        {/* Copyright Section */}
         <div className="mt-8 border-t border-gray-700 pt-4 text-center">
           <p>
             © 2025 All rights reserved. Site made by{" "}
