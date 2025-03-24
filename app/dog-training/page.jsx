@@ -14,34 +14,27 @@ const Training = () => {
       ],
     },
     {
-      category: "PUPPY TRAINING",
+      category: "BASIC TRAINING PACKAGES",
       services: [
-        { name: "Puppy Basics (8-16 weeks old)", price: "ksh 1,500 per session" },
-        { name: "Puppy Socialization Package (4 sessions)", price: "ksh 5,500" },
+        { name: "Puppy Training (8-16 weeks)", price: "ksh 1,500 per session" },
+        { name: "Basic Obedience (Sit, Stay, Come, Leash Training)", price: "ksh 2,000 per session" },
+        { name: "House Training (Potty Training, Crate Training, etc.)", price: "ksh 1,500 per session" },
       ],
     },
     {
-      category: "OBEDIENCE & MANNERS",
+      category: "BEHAVIORAL TRAINING",
       services: [
-        { name: "Basic Obedience (Sit, Stay, Recall, Leash Walking, etc.)", price: "ksh 2,000 per session" },
-        { name: "Advanced Obedience", price: "ksh 2,350 per session" },
-        { name: "Obedience Package (5 Sessions)", price: "ksh 8,000" },
+        { name: "Leash Reactivity & Barking Control", price: "ksh 1,500 per session" },
+        { name: "Separation Anxiety Training", price: "ksh 2,000 per session" },
+        { name: "Aggression & Behavior Modification (Evaluation required)", price: "ksh 2,350 per session" },
       ],
     },
     {
-      category: "BEHAVIOR MODIFICATION",
+      category: "ADVANCED & SPECIALIZED TRAINING",
       services: [
-        { name: "Reactivity Training (Aggression, Fear, Anxiety)", price: "ksh 2,350 per session" },
-        { name: "Separation Anxiety Program", price: "ksh 2,000 per session" },
-        { name: "Custom Behavior Plan (Includes Consultation & Sessions)", price: "ksh 3,000" },
-      ],
-    },
-    {
-      category: "BOARD & TRAIN PROGRAMS",
-      services: [
-        { name: "2-Week Obedience Bootcamp", price: "ksh 23,500" },
-        { name: "3-Week Behavior Modification Camp", price: "ksh 35,250" },
-        { name: "Custom Stay & Train Program", price: "Contact for Pricing" },
+        { name: "Off-Leash Training", price: "ksh 1,500 per session" },
+        { name: "Socialization & Confidence Building", price: "ksh 1,000 per session" },
+        { name: "Trick Training & Fun Commands", price: "ksh 1,500 per session" },
       ],
     },
   ];
@@ -65,7 +58,7 @@ const Training = () => {
         <div className="text-center md:text-left space-y-4">
           <h2 className="text-3xl font-bold text-white">Dog Training</h2>
           <p className="font-semibold text-neutral-200">
-            We provide top-notch dog training services tailored to your dog's needs. Whether it's obedience training, 
+            We provide top-notch dog training services tailored to your dog's needs. Whether it's obedience training,
             behavior modification, or specialized training, we have a program suited for every dog!
           </p>
         </div>
@@ -89,6 +82,13 @@ const Training = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Contact Section */}
+      <div className="mt-12 text-center text-white">
+        <p className="text-lg">💬 <strong>Custom Training Plans Available!</strong> Contact us to discuss your dog’s unique needs.</p>
+        <p className="mt-4 text-lg">📍 <strong>Location:</strong> Kisii</p>
+        <p className="mt-2 text-lg">📞 <strong>Book Now:</strong> <a href="tel:0702802588" className="text-blue-400">0702802588</a> | <a href="mailto:westk9.co.ke" className="text-blue-400">westk9.co.ke</a></p>
       </div>
     </div>
   );
