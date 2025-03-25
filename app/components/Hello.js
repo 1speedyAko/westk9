@@ -22,7 +22,7 @@ function Hello() {
       <div className='absolute inset-0 bg-black bg-opacity-50'></div>
 
       {/* Text Content */}
-      <div className="relative z-10 flex flex-col justify-center items-start min-h-screen p-10 text-white">
+      <div className="pt-20 md:pt-20 relative z-10 flex flex-col justify-center items-start min-h-screen p-10 text-white">
         <h1 className="text-3xl font-bold capitalize">
           <ReactTyped strings={['Who are we?']} typeSpeed={100} loop /> 
         </h1>

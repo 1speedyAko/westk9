@@ -1,18 +1,11 @@
 import React from "react";
-import { faHome, faImages } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-  faYoutube,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AiFillHome, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
+import { BsImages, BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8 pb-0">
+    <footer className="bg-gray-800 text-white py-8 pb-0 w-full">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Quick Links */}
@@ -20,15 +13,13 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="list-none">
               <li className="mb-2">
-                <Link href="/" className="hover:text-gray-400">
-                  <FontAwesomeIcon icon={faHome} className="mr-2" />
-                  Home
+                <Link href="/" className="hover:text-gray-400 flex items-center">
+                  <AiFillHome className="mr-2 text-lg" /> Home
                 </Link>
               </li>
               <li className="mb-2">
-                <Link href="/gallery" className="hover:text-gray-400">
-                  <FontAwesomeIcon icon={faImages} className="mr-2" />
-                  Gallery
+                <Link href="/gallery" className="hover:text-gray-400 flex items-center">
+                  <BsImages className="mr-2 text-lg" /> Gallery
                 </Link>
               </li>
             </ul>
@@ -64,19 +55,19 @@ const Footer = () => {
         {/* Social Media Links - Aligned to Bottom Left */}
         <div className="flex justify-end mt-8">
           <Link href="#" className="mr-4">
-            <FontAwesomeIcon icon={faFacebook} className="text-white text-2xl hover:text-gray-400" />
+            <BsFacebook className="text-white text-lg hover:text-gray-400" />
           </Link>
           <Link href="https://www.instagram.com/westk.9" className="mr-4">
-            <FontAwesomeIcon icon={faInstagram} className="text-white text-2xl hover:text-gray-400" />
+            <AiFillInstagram className="text-white text-lg hover:text-gray-400" />
           </Link>
           <Link href="#" className="mr-4">
-            <FontAwesomeIcon icon={faTwitter} className="text-white text-2xl hover:text-gray-400" />
+            <BsTwitter className="text-white text-lg hover:text-gray-400" />
           </Link>
           <Link href="https://www.youtube.com/@Westk9" className="mr-4">
-            <FontAwesomeIcon icon={faYoutube} className="text-white text-2xl hover:text-gray-400" />
+            <AiFillYoutube className="text-white text-lg hover:text-gray-400" />
           </Link>
           <Link href="#" className="mr-4">
-            <FontAwesomeIcon icon={faLinkedin} className="text-white text-2xl hover:text-gray-400" />
+            <BsLinkedin className="text-white text-lg hover:text-gray-400" />
           </Link>
         </div>
 
