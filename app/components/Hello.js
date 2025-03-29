@@ -8,13 +8,15 @@ function Hello() {
     <div className='relative min-h-screen bg-slate-600'>
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-      <Image 
-          src='/IMG_0810.JPG'
-          alt='backgroundImage'
-          fill
-          quality={100}
-          className="w-full h-full object-cover scale-x-[-1]" // Flips image horizontally
-        />
+      <Image
+        src='/IMG_0810.JPG'
+        alt='backgroundImage'
+        fill
+        quality={100}
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWG3G1Qtmq7MiOe5Z//9k="
+        className="w-full h-full object-cover scale-x-[-1]" // Flips image horizontally
+      />
 
       </div>
 
@@ -26,22 +28,21 @@ function Hello() {
         <h1 className="text-3xl font-bold capitalize">
           <ReactTyped strings={['Who are we?']} typeSpeed={100} loop /> 
         </h1>
-        <p className="mt-5 text-lg leading-relaxed max-w-3xl">
-          Welcome to West K9, where we believe every dog has the potential to be 
-          a well-behaved and happy member of your family. Founded in 2018, we are 
-          dedicated to providing top-notch training services for dogs of all ages, 
-          breeds, and temperaments in Kisumu County, Kenya.
+        <p className="mt-5 text-2xl leading-relaxed max-w-3xl">
+        At West K9, we believe that every dog has the potential to be well-behaved, confident, and a joy to be
+        around. Based in Kisumu County, Kenya, we specialize in professional dog training, behavior
+        modification, grooming, and breeding, ensuring that every dog gets the best care and guidance.
         </p>
-        <p className="mt-3 text-lg leading-relaxed max-w-3xl">
-          Our mission at WK9 is to strengthen the bond between dogs and their owners 
-          through effective, compassionate training techniques. We strive to create a 
-          positive and supportive environment where dogs can learn and grow alongside 
-          their families.
-        </p>
-        <p className="mt-3 text-lg leading-relaxed max-w-3xl">
-          At our facility, our team of experienced trainers brings a wealth of knowledge 
-          and passion to every training session. We stay up to date with the latest 
-          training methods to provide the best possible guidance and support for our furry friends.
+        <p className="mt-3 text-2xl leading-relaxed max-w-3xl">
+        Our approach goes beyond simple commands—we focus on building a strong bond between you and
+        your dog through science-backed training methods tailored to your dog’s unique personality and needs.
+        Whether you have a playful puppy, a rescue dog needing rehabilitation, or a working dog requiring
+        specialized training, we are here to help.
+          </p>
+        <p className="mt-3 text-2xl leading-relaxed max-w-3xl">
+        With years of experience in canine behavior and training, we have transformed countless dogs into well-
+        mannered companions. Our passion is helping you unlock your dog’s full potential, creating a happier
+        and more harmonious home.
         </p>
 
       </div>

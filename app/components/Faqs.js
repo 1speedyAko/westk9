@@ -19,7 +19,7 @@ const Faq = () => {
         "It varies by age, breed, and training consistency. Basic commands can be learned in days to weeks, while advanced training might take months.",
     },
     {
-      question: "What’s the best way to potty train a dog?",
+      question: "What's the best way to potty train a dog?",
       answer:
         "Take your dog out regularly—especially after meals—reward them for going outside, and maintain a consistent schedule. Avoid punishment for accidents.",
     },
@@ -90,22 +90,53 @@ const Faq = () => {
     },
   ];
 
-  
-
+  // Split the FAQ items into two columns for medium and large screens
+  const halfwayIndex = Math.ceil(faqItems.length / 2);
+  const leftColumnItems = faqItems.slice(0, halfwayIndex);
+  const rightColumnItems = faqItems.slice(halfwayIndex);
 
   return (
-    <div className="bg-slate-900">
-      <h2 className=" text-center text-2xl font-bold text-neutral-300">FAQs</h2>
-    <Accordion type="single" collapsible className="w-full px-4">
-      {faqItems.map((item, index) => (
-        <AccordionItem key={index} value={`item-${index}`}>
-          <AccordionTrigger className="text-lg text-neutral-300">{item.question}</AccordionTrigger>
-          <AccordionContent className="text-neutral-300">{item.answer}</AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
+    <div className="bg-slate-900 py-8">
+      <div className="container mx-auto">
+        <h2 className="text-center text-3xl font-bold text-neutral-300 mb-8">FAQs</h2>
+        
+        {/* Single column on small screens, two columns on medium and large screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+          {/* Left column */}
+          <div>
+            <Accordion type="single" collapsible className="w-full">
+              {leftColumnItems.map((item, index) => (
+                <AccordionItem key={`left-${index}`} value={`item-left-${index}`}>
+                  <AccordionTrigger className="text-lg text-neutral-300">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-neutral-300">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+          
+          {/* Right column */}
+          <div>
+            <Accordion type="single" collapsible className="w-full">
+              {rightColumnItems.map((item, index) => (
+                <AccordionItem key={`right-${index}`} value={`item-right-${index}`}>
+                  <AccordionTrigger className="text-lg text-neutral-300">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-neutral-300">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </div>
     </div>
-   
   );
 };
-export default Faq
+
+export default Faq;

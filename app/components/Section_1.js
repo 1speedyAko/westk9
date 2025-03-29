@@ -9,8 +9,9 @@ function Section_1() {
         <div>
           
           <p>
-            Central to our training philosophy is the belief that the reinforcement is key to successful and ethical dog training.
-            We work closely with you to develop customized training programs that fit your lifestyle and goals ensuring that both you and your dog 
+          At the heart of our training philosophy is the belief that positive reinforcement is key to ethical and
+          effective dog training. We work closely with you to create customized programs that fit your lifestyle and
+          training goals, ensuring a happy, well-behaved dog and a stronger bond between you both.
                     
           </p>
         </div>
@@ -32,10 +33,10 @@ function Section_1() {
         <div className="mb-4">
           
           <p className="">
-          We prioritize understanding the unique needs of both our 
-          canines and human clients to provide training solutions that work best for your
-          and your dog. 
- 
+            We focus on clear communication and mutual understanding, helping you and your dog build trust and
+            confidence. Our goal is to create a training experience that feels natural, effective, and rewarding for both
+            of you.
+          
            
           </p>
         </div>
