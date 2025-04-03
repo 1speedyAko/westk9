@@ -28,18 +28,18 @@ function Hello() {
         <h1 className="text-3xl font-bold capitalize">
           <ReactTyped strings={['Who are we?']} typeSpeed={100} loop /> 
         </h1>
-        <p className="mt-5 text-2xl leading-relaxed max-w-3xl">
+        <p className="mt-5 text-xl leading-relaxed max-w-3xl">
         At West K9, we believe that every dog has the potential to be well-behaved, confident, and a joy to be
         around. Based in Kisumu County, Kenya, we specialize in professional dog training, behavior
         modification, grooming, and breeding, ensuring that every dog gets the best care and guidance.
         </p>
-        <p className="mt-3 text-2xl leading-relaxed max-w-3xl">
+        <p className="mt-3 text-xl leading-relaxed max-w-3xl">
         Our approach goes beyond simple commands—we focus on building a strong bond between you and
         your dog through science-backed training methods tailored to your dog’s unique personality and needs.
         Whether you have a playful puppy, a rescue dog needing rehabilitation, or a working dog requiring
         specialized training, we are here to help.
           </p>
-        <p className="mt-3 text-2xl leading-relaxed max-w-3xl">
+        <p className="mt-3 text-xl leading-relaxed max-w-3xl">
         With years of experience in canine behavior and training, we have transformed countless dogs into well-
         mannered companions. Our passion is helping you unlock your dog’s full potential, creating a happier
         and more harmonious home.
