@@ -102,7 +102,7 @@ const Testimonials = () => {
 
   return (
     <div className="py-12 md:py-16 lg:py-20 bg-slate-950 dark:bg-zinc-900">
-      <h2 className="text-2xl md:text-3xl text-center font-bold text-neutral-300 dark:text-gray-100 mb-6 md:mb-10 px-4">
+      <h2 className="text-2xl md:text-3xl text-center font-bold text-emerald-400 dark:text-gray-100 mb-6 md:mb-10 px-4">
         What Our Clients Say
       </h2>
       

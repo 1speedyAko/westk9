@@ -5,7 +5,7 @@ function Section_1() {
   return (
     <div className='w-full'>
         
-      <div className="p-10 px-10 bg-emerald-200 grid lg:grid-cols-3 md:grid-cols-2  gap-10 ">
+      <div className="p-10 px-10 bg-slate-800 grid lg:grid-cols-3 md:grid-cols-2  gap-10 text-white">
         <div>
           
           <p>

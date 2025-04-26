@@ -33,8 +33,8 @@ function Services() {
   ];
 
   return (
-    <div className="bg-emerald-200 py-8 w-full">
-      <h1 className="text-black text-3xl text-center pb-8 font-bold">Our Services</h1>
+    <div className="bg-slate-800 py-8 w-full">
+      <h1 className="text-emerald-400 text-3xl text-center pb-8 font-bold">Our Services</h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-7 px-4">
         {services.map((service, index) => (
           <Card key={index} className="shadow-lg overflow-hidden flex flex-col transform transition duration-300 hover:scale-105 hover:shadow-xl">
@@ -42,10 +42,10 @@ function Services() {
               <Image src={service.image} alt={service.title} layout="fill" objectFit="cover" />
             </div>
             <CardContent className="p-4 text-center">
-              <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
-              <p className="text-black text-sm mt-2">{service.details}</p>
+              <CardTitle className="text-white text-xl font-bold">{service.title}</CardTitle>
+              <p className="text-white text-sm mt-2">{service.details}</p>
               <Link href={service.route}>
-                <Button className="mt-4 transition duration-300 transform hover:scale-105 hover:bg-emerald-600 hover:text-white">
+                <Button className="text-white mt-4 transition duration-300 transform hover:scale-105 hover:bg-emerald-600 hover:text-white">
                   Read More
                 </Button>
               </Link>

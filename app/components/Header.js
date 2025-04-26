@@ -22,12 +22,13 @@ const Header = () => {
 
   const navigationItems = [
     { name: "Home", section: "home", type: "scroll" },
-    { name: "Services", section: "services", type: "scroll" },
+    // { name: "Services", section: "services", type: "scroll" },
     { name: "About", section: "about", type: "scroll" },
-    { name: "Testimonials", section: "testimonials", type: "scroll" },
-    { name: "FAQs", section: "faqs", type: "scroll" },
+    // { name: "Testimonials", section: "testimonials", type: "scroll" },
+    // { name: "FAQs", section: "faqs", type: "scroll" },
     {name: "Contact", section:"contact", type:"scroll"},
     { name: "Gallery", route: "/gallery", type: "route" },
+    { name: "Pricing", route: "/pricing", type: "route" },
   ];
 
   const renderNavigationButton = (item) => {

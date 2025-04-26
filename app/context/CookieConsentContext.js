@@ -2,11 +2,15 @@
 
 import { createContext, useContext, useState, useEffect } from 'react'
 
-const CookieConsentContext = createContext(null)
+const CookieConsentContext = createContext()
+
+export function useCookieConsent() {
+  return useContext(CookieConsentContext)
+}
 
 export function CookieConsentProvider({ children }) {
   const [cookieConsent, setCookieConsent] = useState({
-    necessary: true, // Always required
+    necessary: true,
     analytics: false,
     marketing: false,
     preferences: false,
@@ -14,38 +18,27 @@ export function CookieConsentProvider({ children }) {
   })
 
   useEffect(() => {
-    // Check if user has already made a choice
-    const savedConsent = localStorage.getItem('cookieConsent')
-    if (savedConsent) {
-      setCookieConsent(JSON.parse(savedConsent))
+    const cookieString = document.cookie
+    const cookiesArray = cookieString.split('; ')
+    const cookieObject = {}
+    
+    cookiesArray.forEach(cookie => {
+      const [name, value] = cookie.split('=')
+      cookieObject[name] = decodeURIComponent(value)
+    })
+    
+    if (cookieObject.cookie_consent) {
+      try {
+        const consent = JSON.parse(cookieObject.cookie_consent)
+        setCookieConsent(consent)
+      } catch (error) {
+        console.error('Invalid consent cookie', error)
+      }
     }
   }, [])
 
   const updateConsent = (newConsent) => {
-    const updatedConsent = { ...newConsent, hasResponded: true }
-    setCookieConsent(updatedConsent)
-    localStorage.setItem('cookieConsent', JSON.stringify(updatedConsent))
-    
-    // If analytics is accepted, set the analytics cookies
-    if (updatedConsent.analytics) {
-      document.cookie = `analytics_enabled=true; max-age=${60 * 60 * 24 * 365}; path=/; samesite=strict`
-    } else {
-      document.cookie = `analytics_enabled=false; max-age=0; path=/; samesite=strict`
-    }
-    
-    // Similarly for marketing cookies
-    if (updatedConsent.marketing) {
-      document.cookie = `marketing_enabled=true; max-age=${60 * 60 * 24 * 365}; path=/; samesite=strict`
-    } else {
-      document.cookie = `marketing_enabled=false; max-age=0; path=/; samesite=strict`
-    }
-    
-    // And for preferences cookies
-    if (updatedConsent.preferences) {
-      document.cookie = `preferences_enabled=true; max-age=${60 * 60 * 24 * 365}; path=/; samesite=strict`
-    } else {
-      document.cookie = `preferences_enabled=false; max-age=0; path=/; samesite=strict`
-    }
+    setCookieConsent(newConsent)
   }
 
   return (
@@ -53,12 +46,4 @@ export function CookieConsentProvider({ children }) {
       {children}
     </CookieConsentContext.Provider>
   )
-}
-
-export function useCookieConsent() {
-  const context = useContext(CookieConsentContext)
-  if (!context) {
-    throw new Error('useCookieConsent must be used within a CookieConsentProvider')
-  }
-  return context
 }
