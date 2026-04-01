@@ -26,7 +26,7 @@ const Header = () => {
     { name: "About", section: "about", type: "scroll" },
     // { name: "Testimonials", section: "testimonials", type: "scroll" },
     // { name: "FAQs", section: "faqs", type: "scroll" },
-    {name: "Contact", section:"contact", type:"scroll"},
+    { name: "Contact", section: "contact", type: "scroll" },
     { name: "Gallery", route: "/gallery", type: "route" },
     { name: "Pricing", route: "/pricing", type: "route" },
   ];
@@ -87,17 +87,17 @@ const Header = () => {
     <nav className="bg-gray-800 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/">
-            <div className="flex-shrink-0">
-              <Image
-                src="/profile.png"
-                alt="logo"
-                width={90}
-                height={70}
-                className="w-auto"
-              />
-            </div>
+          <Link href="/" className="flex items-center h-full">
+            <Image
+              src="/whitelogo.svg"
+              alt="logo"
+              width={300}
+              height={250}
+              className=" object-contain"
+              priority
+            />
           </Link>
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             {navigationItems.map((item) => renderNavigationButton(item))}

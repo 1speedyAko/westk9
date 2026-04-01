@@ -35,10 +35,10 @@
     "keen-slider": "^6.8.6",
     "lqip-modern": "^2.2.1",
     "lucide-react": "^0.474.0",
-    "next": "15.1.6",
-    "react": "^19.0.0",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
     "react-countup": "^6.5.3",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.2.4",
     "react-hook-form": "^7.54.2",
     "react-icons": "^5.4.0",
     "react-slick": "^0.30.3",
@@ -55,7 +55,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.1.6",
+    "eslint-config-next": "^16.1.6",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   }

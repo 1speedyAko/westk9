@@ -1,6 +1,6 @@
 import React from "react";
-import { AiFillHome, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
-import { BsImages, BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
+import { AiFillHome, AiFillInstagram } from "react-icons/ai";
+import { BsImages, BsFacebook, BsTwitter } from "react-icons/bs";
 import Link from "next/link";
 
 const Footer = () => {
@@ -8,6 +8,7 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white py-8 pb-0 w-full">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
@@ -43,18 +44,21 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="py-2 px-4 rounded-l-lg focus:outline-none text-black"
+                className="py-2 px-4 rounded-l-lg focus:outline-none text-black w-full"
               />
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-r-md focus:outline-none">
-                <Link href="/">Subscribe</Link>
+              <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-r-md"
+              >
+                Subscribe
               </button>
             </form>
           </div>
         </div>
 
-        {/* Social Media Links - Aligned to Bottom Left */}
+        {/* Social Media Links */}
         <div className="flex justify-end mt-8">
-          <Link href="#" className="mr-4">
+          <Link href="https://www.facebook.com/profile.php?id=61582369095665" className="mr-4">
             <BsFacebook className="text-white text-lg hover:text-gray-400" />
           </Link>
           <Link href="https://www.instagram.com/westk.9" className="mr-4">
@@ -63,18 +67,12 @@ const Footer = () => {
           <Link href="#" className="mr-4">
             <BsTwitter className="text-white text-lg hover:text-gray-400" />
           </Link>
-          <Link href="https://www.youtube.com/@Westk9" className="mr-4">
-            <AiFillYoutube className="text-white text-lg hover:text-gray-400" />
-          </Link>
-          <Link href="#" className="mr-4">
-            <BsLinkedin className="text-white text-lg hover:text-gray-400" />
-          </Link>
         </div>
 
-        {/* Copyright Section */}
+        {/* Copyright */}
         <div className="mt-8 border-t border-gray-700 pt-4 text-center">
           <p>
-            © 2025 All rights reserved. Site made by{" "}
+            © {new Date().getFullYear()} All rights reserved. Site made by{" "}
             <Link
               href="https://www.digitalcheuxes.co.ke"
               className="underline decoration-2 decoration-emerald-600 hover:text-gray-400"
