@@ -4,31 +4,63 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faDog, faClock } from '@fortawesome/free-solid-svg-icons';
 import CountUp from 'react-countup';
 
+const stats = [
+  {
+    icon: faUsers,
+    value: 65,
+    suffix: '+',
+    label: 'Happy Clients',
+    description: 'Dogs and owners living their best lives',
+  },
+  {
+    icon: faDog,
+    value: 30,
+    suffix: '+',
+    label: 'Adoptions',
+    description: 'Dogs rehomed into loving families',
+  },
+  {
+    icon: faClock,
+    value: 6,
+    suffix: '+',
+    label: 'Years of Experience',
+    description: 'Dedicated to canine excellence',
+  },
+];
+
 function Section_2() {
   return (
-    <div className="bg-slate-800 p-10 grid lg:grid-cols-3 md:grid-cols-2 gap-10 py-10">
-      <div className="flex flex-col items-center">
-        <p className="order-1 text-3xl text-emerald-400 font-bold">Happy Clients</p>
-        <FontAwesomeIcon icon={faUsers} className="order-2 text-4xl text-blue-500 p-4" />
-        <div className="order-3 text-2xl text-white">
-          <CountUp start={0} end={65} duration={2} delay={0} className="text-3xl font-bold" />+
-        </div>
-      </div>
+    <div className="bg-slate-950 py-12 border-y border-white/5">
+      <div className="max-w-5xl mx-auto px-4 grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-px bg-white/5">
+        {stats.map((stat, i) => (
+          <div
+            key={i}
+            className="group flex flex-col items-center text-center py-12 px-8 bg-slate-950 hover:bg-slate-900/60 transition-colors duration-300 relative"
+          >
+            {/* Glow on hover */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
+            </div>
 
-      <div className="flex flex-col items-center">
-        <p className="order-1 text-3xl text-emerald-400 font-bold">Adoptions</p>
-        <FontAwesomeIcon icon={faDog} className="order-2 text-4xl text-blue-500 p-4" />
-        <div className="order-3 text-2xl text-white">
-          <CountUp start={0} end={30} duration={2} delay={0} className="text-3xl font-bold" />+
-        </div>
-      </div>
+            <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 group-hover:bg-emerald-500/20 transition-colors duration-300">
+              <FontAwesomeIcon icon={stat.icon} className="text-emerald-400 text-xl" />
+            </div>
 
-      <div className="flex flex-col items-center">
-        <p className="order-1 text-3xl text-emerald-400 text-center font-bold">Years</p>
-        <FontAwesomeIcon icon={faClock} className="order-2 text-4xl text-blue-500 p-4" />
-        <div className="order-3 text-2xl text-white">
-          <CountUp start={0} end={6} duration={5} delay={0} className="text-3xl font-bold" />+
-        </div>
+            <div className="flex items-end gap-0.5">
+              <CountUp
+                start={0}
+                end={stat.value}
+                duration={2.5}
+                delay={0}
+                className="text-4xl font-bold text-white"
+              />
+              <span className="text-2xl font-bold text-emerald-400 mb-0.5">{stat.suffix}</span>
+            </div>
+
+            <p className="mt-2 text-base font-semibold text-emerald-400">{stat.label}</p>
+            <p className="mt-1 text-xs text-slate-500">{stat.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
