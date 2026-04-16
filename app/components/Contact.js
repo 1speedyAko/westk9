@@ -20,7 +20,10 @@ const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(2, "Last name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().regex(/^\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$|^\d{10}$/, "Please enter a valid phone number"),
+  phone: z.string().regex(
+    /^(\+?254|0)[17]\d{8}$|^\+?[1-9]\d{6,14}$/,
+    "Please enter a valid phone number (e.g. 0712 345 678 or +254 712 345 678)"
+  ),
   message: z.string().min(10, "Message must be at least 10 characters").max(500, "Message must be less than 500 characters"),
 })
 

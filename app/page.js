@@ -2,7 +2,6 @@ import About from "./components/About";
 // import Card from "./components/Card";
 import CardSection from "./components/CardSection";
 import ContactPage from "./components/Contact";
-import DraftForm from "./components/Contact";
 import Faqs from "./components/Faqs";
 import HomePage from "./components/Hello";
 import Section_1 from "./components/Section_1";
