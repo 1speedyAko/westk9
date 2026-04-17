@@ -55,7 +55,7 @@ function About() {
 
             {/* Floating card */}
             <div className="absolute -bottom-6 -right-4 bg-slate-950 border border-emerald-500/20 rounded-xl px-5 py-4 shadow-xl">
-              <p className="text-3xl font-bold text-emerald-400">6+</p>
+              <p className="text-3xl font-bold text-emerald-400">7+</p>
               <p className="text-xs text-slate-400 mt-0.5">Years of Excellence</p>
             </div>
           </div>
