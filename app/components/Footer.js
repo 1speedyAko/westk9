@@ -10,23 +10,23 @@ const Footer = () => {
   return (
     <footer className="bg-slate-950 border-t border-white/5 text-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
 
-          {/* Brand */}
-          <div className="lg:col-span-1">
+          {/* Brand — wider column */}
+          <div className="lg:col-span-4">
             <Image
               src="/whitelogo.svg"
               alt="West K9 logo"
-              width={160}
-              height={50}
-              style={{ width: 'auto', height: '300px' }}
-              className="object-contain mb-4"
+              width={250}
+              height={200}
+              className="object-contain  h-48 w-auto"
             />
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Professional dog training, grooming, and breeding in Kisumu County, Kenya. Transforming dogs into confident companions.
             </p>
+
             {/* Social icons */}
-            <div className="flex items-center gap-4 mt-6">
+            <div className="flex items-center gap-3 mt-6">
               <Link
                 href="https://www.facebook.com/profile.php?id=61582369095665"
                 target="_blank"
@@ -56,8 +56,10 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-5">Quick Links</h4>
+          <div className="lg:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
               {[
                 { label: "Home", href: "/" },
@@ -65,7 +67,10 @@ const Footer = () => {
                 { label: "Pricing", href: "/pricing" },
               ].map(({ label, href }) => (
                 <li key={label}>
-                  <Link href={href} className="text-slate-400 hover:text-emerald-400 text-sm transition-colors duration-200 flex items-center gap-2 group">
+                  <Link
+                    href={href}
+                    className="text-slate-400 hover:text-emerald-400 text-sm transition-colors duration-200 flex items-center gap-2 group"
+                  >
                     <span className="w-1 h-1 rounded-full bg-slate-600 group-hover:bg-emerald-400 transition-colors duration-200" />
                     {label}
                   </Link>
@@ -75,8 +80,10 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-5">Services</h4>
+          <div className="lg:col-span-3">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
+              Services
+            </h4>
             <ul className="space-y-3">
               {[
                 { label: "Dog Grooming", href: "/dog-grooming" },
@@ -85,7 +92,10 @@ const Footer = () => {
                 { label: "Dog Breeding", href: "/dog-breeding" },
               ].map(({ label, href }) => (
                 <li key={label}>
-                  <Link href={href} className="text-slate-400 hover:text-emerald-400 text-sm transition-colors duration-200 flex items-center gap-2 group">
+                  <Link
+                    href={href}
+                    className="text-slate-400 hover:text-emerald-400 text-sm transition-colors duration-200 flex items-center gap-2 group"
+                  >
                     <span className="w-1 h-1 rounded-full bg-slate-600 group-hover:bg-emerald-400 transition-colors duration-200" />
                     {label}
                   </Link>
@@ -95,24 +105,26 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-5">Stay Updated</h4>
+          <div className="lg:col-span-3">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
+              Stay Updated
+            </h4>
             <p className="text-slate-500 text-xs mb-4 leading-relaxed">
               Subscribe for training tips and updates from West K9.
             </p>
-            <form className="flex gap-2">
+            <div className="flex gap-2">
               <input
                 type="email"
                 placeholder="Your email"
-                className="flex-1 bg-slate-800 border border-white/5 text-slate-200 placeholder:text-slate-600 text-sm px-3 py-2.5 rounded-lg focus:outline-none focus:border-emerald-500/40 transition-colors duration-200"
+                className="flex-1 min-w-0 bg-slate-800 border border-white/5 text-slate-200 placeholder:text-slate-600 text-sm px-3 py-2.5 rounded-lg focus:outline-none focus:border-emerald-500/40 transition-colors duration-200"
               />
               <button
-                type="submit"
+                type="button"
                 className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm px-4 py-2.5 rounded-lg transition-all duration-200 flex-shrink-0"
               >
                 Go
               </button>
-            </form>
+            </div>
           </div>
         </div>
 
