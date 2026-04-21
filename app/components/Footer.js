@@ -19,6 +19,7 @@ const Footer = () => {
               alt="West K9 logo"
               width={160}
               height={50}
+              style={{ width: 'auto', height: '300px' }}
               className="object-contain mb-4"
             />
             <p className="text-slate-400 text-sm leading-relaxed">

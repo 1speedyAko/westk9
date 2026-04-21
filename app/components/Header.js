@@ -31,7 +31,7 @@ const Header = () => {
   // Active section tracking via IntersectionObserver
   useEffect(() => {
     if (!isHomePage) return;
-    const sectionIds = ["home", "services", "about", "testimonials", "faqs", "contact"];
+    const sectionIds = ["home", "about", "services", "testimonials", "faqs", "contact"];
     const observers = [];
 
     sectionIds.forEach((id) => {
@@ -51,7 +51,9 @@ const Header = () => {
   const scrollToSection = useCallback((id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const navHeight = 64; // matches h-16
+      const top = section.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top, behavior: "smooth" });
       setActiveSection(id);
     }
     setMobileOpen(false);
@@ -60,12 +62,12 @@ const Header = () => {
   const closeMobile = () => setMobileOpen(false);
 
   const navigationItems = [
-    { name: "Home",     section: "home",     type: "scroll" },
-    { name: "About",    section: "about",    type: "scroll" },
+    { name: "Home", section: "home", type: "scroll" },
+    { name: "About", section: "about", type: "scroll" },
     { name: "Services", section: "services", type: "scroll" },
-    { name: "Contact",  section: "contact",  type: "scroll" },
-    { name: "Gallery",  route: "/gallery",   type: "route"  },
-    { name: "Pricing",  route: "/pricing",   type: "route"  },
+    { name: "Contact", section: "contact", type: "scroll" },
+    { name: "Gallery", route: "/gallery", type: "route" },
+    { name: "Pricing", route: "/pricing", type: "route" },
   ];
 
   /* ─── Desktop nav link ─────────────────────────────────────── */
@@ -112,11 +114,10 @@ const Header = () => {
         ? pathname === item.route
         : isHomePage && item.section === activeSection;
 
-    const cls = `flex items-center gap-3 w-full px-4 py-3.5 rounded-xl text-base font-medium transition-all duration-200 ${
-      isActive
-        ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-        : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
-    }`;
+    const cls = `flex items-center gap-3 w-full px-4 py-3.5 rounded-xl text-base font-medium transition-all duration-200 ${isActive
+      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+      : "text-slate-300 hover:bg-slate-800/70 hover:text-white"
+      }`;
 
     if (item.type === "route") {
       return (
@@ -149,11 +150,10 @@ const Header = () => {
   return (
     <>
       <nav
-        className={`fixed w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-slate-950/90 backdrop-blur-xl border-b border-white/5 shadow-xl shadow-black/20"
-            : "bg-transparent"
-        }`}
+        className={`fixed w-full z-50 transition-all duration-500 ${scrolled
+          ? "bg-slate-950/90 backdrop-blur-xl border-b border-white/5 shadow-xl shadow-black/20"
+          : "bg-transparent"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -164,6 +164,7 @@ const Header = () => {
                 alt="West K9 logo"
                 width={200}
                 height={200}
+                style={{ width: 'auto', height: '250px' }}
                 className="object-contain"
                 priority
               />
@@ -192,16 +193,14 @@ const Header = () => {
       <div
         aria-hidden="true"
         onClick={closeMobile}
-        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden transition-opacity duration-300 ${
-          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden transition-opacity duration-300 ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
       />
 
       {/* Drawer panel */}
       <div
-        className={`fixed top-0 right-0 bottom-0 z-50 w-72 md:hidden flex flex-col bg-slate-950 border-l border-white/5 shadow-2xl transition-transform duration-300 ease-in-out ${
-          mobileOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 bottom-0 z-50 w-72 md:hidden flex flex-col bg-slate-950 border-l border-white/5 shadow-2xl transition-transform duration-300 ease-in-out ${mobileOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Drawer header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/5">
@@ -210,6 +209,7 @@ const Header = () => {
             alt="West K9 logo"
             width={140}
             height={140}
+            style={{ width: 'auto', height: '40px' }}
             className="object-contain"
           />
           <button

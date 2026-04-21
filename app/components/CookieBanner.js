@@ -1,16 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { useCookieConsent } from '../context/CookieConsentContext'
-import { Cookie, ChevronDown, ChevronUp, Shield, BarChart2, Megaphone, Settings } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Cookie, ChevronDown, ChevronUp, Shield, BarChart2, Megaphone, Settings, X } from 'lucide-react'
 
-async function saveConsentToServer(consent) {
-  await fetch('/api/set-cookie', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(consent),
-  })
-}
+const COOKIE_KEY = 'wk9_cookie_consent'
 
 const cookieTypes = [
   {
@@ -69,33 +62,48 @@ function Toggle({ checked, onChange, disabled }) {
 }
 
 export function CookieConsentBanner() {
-  const { cookieConsent, updateConsent } = useCookieConsent()
+  const [visible, setVisible] = useState(false)
   const [showDetails, setShowDetails] = useState(false)
+  const [consent, setConsent] = useState({
+    necessary: true,
+    analytics: false,
+    marketing: false,
+    preferences: false,
+  })
 
-  if (cookieConsent.hasResponded) return null
+  // Only show if no prior choice stored in localStorage
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(COOKIE_KEY)
+      if (!stored) setVisible(true)
+    } catch {
+      setVisible(true)
+    }
+  }, [])
 
-  const handleAcceptAll = async () => {
-    const consent = { necessary: true, analytics: true, marketing: true, preferences: true, hasResponded: true }
-    updateConsent(consent)
-    await saveConsentToServer(consent)
+  const save = (chosenConsent) => {
+    try {
+      localStorage.setItem(COOKIE_KEY, JSON.stringify(chosenConsent))
+    } catch {}
+    // Also write a real cookie for server-side reading
+    document.cookie = `${COOKIE_KEY}=${encodeURIComponent(JSON.stringify(chosenConsent))}; path=/; max-age=${60 * 60 * 24 * 365}`
+    setVisible(false)
   }
 
-  const handleRejectAll = async () => {
-    const consent = { necessary: true, analytics: false, marketing: false, preferences: false, hasResponded: true }
-    updateConsent(consent)
-    await saveConsentToServer(consent)
-  }
+  const handleAcceptAll = () =>
+    save({ necessary: true, analytics: true, marketing: true, preferences: true })
 
-  const handleSavePreferences = async () => {
-    const updatedConsent = { ...cookieConsent, hasResponded: true }
-    updateConsent(updatedConsent)
-    await saveConsentToServer(updatedConsent)
-  }
+  const handleRejectAll = () =>
+    save({ necessary: true, analytics: false, marketing: false, preferences: false })
+
+  const handleSavePreferences = () => save(consent)
 
   const handleToggle = (type) => {
     if (type === 'necessary') return
-    updateConsent({ ...cookieConsent, [type]: !cookieConsent[type], hasResponded: false })
+    setConsent((prev) => ({ ...prev, [type]: !prev[type] }))
   }
+
+  if (!visible) return null
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[999] px-4 pb-4 md:pb-6 md:px-6">
@@ -112,13 +120,13 @@ export function CookieConsentBanner() {
               <h2 className="text-white font-semibold text-sm">We value your privacy</h2>
               <p className="text-slate-400 text-xs mt-1 leading-relaxed max-w-xl">
                 We use cookies to enhance your browsing experience and analyse site traffic.
-                By clicking <span className="text-white">"Accept All"</span>, you consent to our use of cookies.
+                By clicking <span className="text-white">&quot;Accept All&quot;</span>, you consent to our use of cookies.
               </p>
             </div>
           </div>
 
           {/* Action buttons */}
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex items-center gap-2 flex-shrink-0 flex-wrap">
             <button
               onClick={() => setShowDetails(!showDetails)}
               className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white border border-white/10 hover:border-white/20 px-3 py-2 rounded-lg transition-all duration-200"
@@ -167,7 +175,7 @@ export function CookieConsentBanner() {
                     </div>
                   </div>
                   <Toggle
-                    checked={!!cookieConsent[type]}
+                    checked={!!consent[type]}
                     onChange={() => handleToggle(type)}
                     disabled={required}
                   />

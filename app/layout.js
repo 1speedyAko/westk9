@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react"
-import { CookieConsentProvider } from "./context/CookieConsentContext";
 import { CookieConsentBanner } from "./components/CookieBanner";
 
 const inter = Inter({
@@ -24,12 +23,11 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <Analytics />
         <Header />
-        <CookieConsentProvider>
-          <main>{children}</main>
-          <CookieConsentBanner />
-        </CookieConsentProvider>
+        <main>{children}</main>
+        <CookieConsentBanner />
         <Footer />
       </body>
     </html>
   );
 }
+

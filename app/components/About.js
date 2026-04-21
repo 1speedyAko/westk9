@@ -44,11 +44,11 @@ function About() {
             <div className="absolute -inset-1 bg-gradient-to-br from-emerald-500/20 to-teal-500/10 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative rounded-2xl overflow-hidden border border-white/5">
               <Image
-                src="/snifferup.JPG"
+                src="/gallery3.jpeg"
                 alt="West K9 dog"
                 width={700}
                 height={600}
-                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-100 object-cover object-top group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
             </div>

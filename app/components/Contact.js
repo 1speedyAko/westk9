@@ -29,7 +29,7 @@ const formSchema = z.object({
 
 const contactInfo = [
   { icon: MapPin, label: "Location", value: "Kisumu County, Kenya" },
-  { icon: Phone, label: "Phone", value: "+254 700 000 000" },
+  { icon: Phone, label: "Phone", value: "+254 702 802 588" },
   { icon: Mail, label: "Email", value: "info@westk9.co.ke" },
 ]
 
@@ -97,7 +97,7 @@ const ContactForm = () => {
               <p className="text-emerald-300 text-sm italic leading-relaxed">
                 "Every dog has the potential to be well-behaved, confident, and a joy to be around."
               </p>
-              <p className="text-emerald-500 text-xs mt-2 font-medium">— West K9 Team</p>
+              <p className="text-emerald-500 text-xs mt-2 font-medium">Rodney Winstone - CEO</p>
             </div>
           </div>
 

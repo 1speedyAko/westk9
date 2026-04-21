@@ -15,7 +15,7 @@ function Hello() {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src='/IMG_0810.JPG'
+          src='/gallery1.jpeg'
           alt='West K9 hero background'
           fill
           quality={90}
@@ -81,9 +81,9 @@ function Hello() {
           {/* Stats row */}
           <div className="mt-16 flex flex-wrap gap-8">
             {[
-              { value: '65+', label: 'Happy Clients' },
-              { value: '30+', label: 'Adoptions' },
-              { value: '6+', label: 'Years Experience' },
+              { value: '50+', label: 'Happy Clients' },
+              { value: '40+', label: 'Adoptions' },
+              { value: '7+', label: 'Years Experience' },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-bold text-emerald-400">{stat.value}</p>

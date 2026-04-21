@@ -19,11 +19,11 @@ function Section_1() {
           <div className="absolute -inset-1 bg-gradient-to-br from-emerald-500/30 to-teal-500/10 rounded-2xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="relative rounded-2xl overflow-hidden border border-white/5">
             <Image
-              src="/sable.JPG"
+              src="/gallery2.jpeg"
               height={500}
               width={700}
               alt="West K9 dog training"
-              className="w-full h-80 object-cover"
+              className="w-full h-100 object-cover object-center"
               quality={80}
               priority
             />

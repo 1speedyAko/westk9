@@ -6,28 +6,28 @@ import { ArrowRight } from "lucide-react";
 const services = [
   {
     title: "Dog Grooming",
-    image: "/cougar.JPG",
+    image: "/gallery4.jpeg",
     details: "Nail clipping, full body wash, and coat care to keep your dog looking and feeling their best.",
     route: "/dog-grooming",
     badge: "Most Popular",
   },
   {
     title: "Dog Training",
-    image: "/blook.JPG",
+    image: "/gallery5.jpeg",
     details: "From basic commands to advanced obedience — we build confident, well-mannered dogs.",
     route: "/dog-training",
     badge: null,
   },
   {
     title: "Handler Training",
-    image: "/taliban.JPG",
+    image: "/gallery6.jpeg",
     details: "Empower yourself with the skills and confidence to communicate effectively with your dog.",
     route: "/handler-training",
     badge: null,
   },
   {
     title: "Dog Breeding",
-    image: "/lookup.JPG",
+    image: "/gallery1.jpeg",
     details: "Stud services and responsible puppy rehoming — quality bloodlines, healthy pups.",
     route: "/dog-breeding",
     badge: null,
@@ -61,6 +61,7 @@ function Services() {
                 src={service.image}
                 alt={service.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               {/* Gradient overlay */}

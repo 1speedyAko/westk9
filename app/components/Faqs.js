@@ -1,10 +1,6 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { HelpCircle } from "lucide-react";
+"use client"
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const faqItems = [
   {
@@ -57,11 +53,42 @@ const faqItems = [
   },
 ];
 
+function FaqItem({ question, answer, isOpen, onToggle }) {
+  return (
+    <div className="border-b border-white/5">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between gap-4 text-left py-4 text-sm font-medium text-slate-200 hover:text-emerald-400 transition-colors duration-200 focus:outline-none"
+        aria-expanded={isOpen}
+      >
+        <span>{question}</span>
+        <ChevronDown
+          className={`w-4 h-4 flex-shrink-0 text-emerald-400 transition-transform duration-300 ${
+            isOpen ? "rotate-180" : "rotate-0"
+          }`}
+        />
+      </button>
+
+      {/* Smooth expand/collapse using max-height transition */}
+      <div
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ maxHeight: isOpen ? "200px" : "0px", opacity: isOpen ? 1 : 0 }}
+      >
+        <p className="text-slate-400 text-sm leading-relaxed pb-5 pr-6">{answer}</p>
+      </div>
+    </div>
+  );
+}
+
 const half = Math.ceil(faqItems.length / 2);
 const leftColumn = faqItems.slice(0, half);
 const rightColumn = faqItems.slice(half);
 
 const Faq = () => {
+  // Track open item per column independently: [leftOpenIndex, rightOpenIndex]
+  const [openLeft, setOpenLeft] = useState(null);
+  const [openRight, setOpenRight] = useState(null);
+
   return (
     <div className="bg-slate-900 py-20 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
@@ -71,30 +98,37 @@ const Faq = () => {
           <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
           <div className="mt-4 w-12 h-1 bg-emerald-500 rounded-full mx-auto" />
           <p className="mt-5 text-slate-400 max-w-xl mx-auto text-sm leading-relaxed">
-            Everything you need to know about dog training. Can't find the answer? Feel free to contact us.
+            Everything you need to know about dog training. Can&apos;t find the answer? Feel free to contact us.
           </p>
         </div>
 
         {/* Two-column FAQ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
-          {[leftColumn, rightColumn].map((col, colIdx) => (
-            <Accordion key={colIdx} type="single" collapsible className="w-full">
-              {col.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`col-${colIdx}-item-${index}`}
-                  className="border-b border-white/5"
-                >
-                  <AccordionTrigger className="text-sm font-medium text-slate-200 hover:text-emerald-400 text-left py-4 [&>svg]:text-emerald-400 hover:no-underline transition-colors duration-200">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-slate-400 text-sm leading-relaxed pb-5">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+          {/* Left column */}
+          <div>
+            {leftColumn.map((item, i) => (
+              <FaqItem
+                key={i}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openLeft === i}
+                onToggle={() => setOpenLeft(openLeft === i ? null : i)}
+              />
+            ))}
+          </div>
+
+          {/* Right column */}
+          <div>
+            {rightColumn.map((item, i) => (
+              <FaqItem
+                key={i}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openRight === i}
+                onToggle={() => setOpenRight(openRight === i ? null : i)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

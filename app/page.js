@@ -19,14 +19,14 @@ export default function Home() {
        
         <Section_1 id="section_1"/>
         <Section_2 id="section_2"/>
-          <section id="services">
-        <Services />
-        </section>
-        
-        <CardSection/>
         <section id="about">
           <About/>
         </section>
+        <section id="services">
+          <Services />
+        </section>
+        
+        <CardSection/>
         <section id="testimonials">
           <Testimonials />
         </section>
