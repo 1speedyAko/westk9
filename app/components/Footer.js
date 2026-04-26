@@ -9,137 +9,134 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-950 border-t border-white/5 text-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-20 pb-10">
 
-          {/* Brand — wider column */}
-          <div className="lg:col-span-4">
-            <Image
-              src="/whitelogo.svg"
-              alt="West K9 logo"
-              width={250}
-              height={200}
-              className="object-contain  h-48 w-auto"
-            />
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
+        {/* Top section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+          {/* Brand (BIG + dominant) */}
+          <div>
+
+            <p className="text-slate-400 text-sm leading-relaxed mt-4 max-w-sm">
               Professional dog training, grooming, and breeding in Kisumu County, Kenya. Transforming dogs into confident companions.
             </p>
 
-            {/* Social icons */}
+            {/* Socials */}
             <div className="flex items-center gap-3 mt-6">
               <Link
                 href="https://www.facebook.com/profile.php?id=61582369095665"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/30 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-all duration-200"
-                aria-label="Facebook"
+                className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/30 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition"
               >
-                <BsFacebook className="text-base" />
+                <BsFacebook />
               </Link>
+
               <Link
                 href="https://www.instagram.com/westk.9"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/30 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-all duration-200"
-                aria-label="Instagram"
+                className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/30 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition"
               >
-                <AiFillInstagram className="text-base" />
+                <AiFillInstagram />
               </Link>
+
               <Link
                 href="#"
-                className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/30 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-all duration-200"
-                aria-label="Twitter"
+                className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/30 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition"
               >
-                <BsTwitter className="text-base" />
+                <BsTwitter />
               </Link>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Home", href: "/" },
-                { label: "Gallery", href: "/gallery" },
-                { label: "Pricing", href: "/pricing" },
-              ].map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-slate-400 hover:text-emerald-400 text-sm transition-colors duration-200 flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate-600 group-hover:bg-emerald-400 transition-colors duration-200" />
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Links (combined clean columns) */}
+          <div className="grid grid-cols-2 gap-10">
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
+                Quick Links
+              </h4>
+              <ul className="space-y-3">
+                {[
+                  { label: "Home", href: "/" },
+                  { label: "Gallery", href: "/gallery" },
+                  { label: "Pricing", href: "/pricing" },
+                ].map(({ label, href }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      className="text-slate-400 hover:text-emerald-400 text-sm transition flex items-center gap-2 group"
+                    >
+                      <span className="w-1 h-1 bg-slate-600 rounded-full group-hover:bg-emerald-400" />
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
+                Services
+              </h4>
+              <ul className="space-y-3">
+                {[
+                  { label: "Dog Grooming", href: "/dog-grooming" },
+                  { label: "Dog Training", href: "/dog-training" },
+                  { label: "Handler Training", href: "/handler-training" },
+                  { label: "Dog Breeding", href: "/dog-breeding" },
+                ].map(({ label, href }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      className="text-slate-400 hover:text-emerald-400 text-sm transition flex items-center gap-2 group"
+                    >
+                      <span className="w-1 h-1 bg-slate-600 rounded-full group-hover:bg-emerald-400" />
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
 
-          {/* Services */}
-          <div className="lg:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
-              Services
-            </h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Dog Grooming", href: "/dog-grooming" },
-                { label: "Dog Training", href: "/dog-training" },
-                { label: "Handler Training", href: "/handler-training" },
-                { label: "Dog Breeding", href: "/dog-breeding" },
-              ].map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-slate-400 hover:text-emerald-400 text-sm transition-colors duration-200 flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-slate-600 group-hover:bg-emerald-400 transition-colors duration-200" />
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="lg:col-span-3">
+          {/* Newsletter (more space + clean box feel) */}
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
               Stay Updated
             </h4>
-            <p className="text-slate-500 text-xs mb-4 leading-relaxed">
-              Subscribe for training tips and updates from West K9.
+
+            <p className="text-slate-500 text-sm mb-5 leading-relaxed">
+              Get dog training tips, updates, and offers directly to your inbox.
             </p>
+
             <div className="flex gap-2">
               <input
                 type="email"
                 placeholder="Your email"
-                className="flex-1 min-w-0 bg-slate-800 border border-white/5 text-slate-200 placeholder:text-slate-600 text-sm px-3 py-2.5 rounded-lg focus:outline-none focus:border-emerald-500/40 transition-colors duration-200"
+                className="flex-1 bg-slate-800 border border-white/5 text-slate-200 placeholder:text-slate-600 text-sm px-3 py-3 rounded-lg focus:outline-none focus:border-emerald-500/40"
               />
-              <button
-                type="button"
-                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm px-4 py-2.5 rounded-lg transition-all duration-200 flex-shrink-0"
-              >
-                Go
+              <button className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm px-5 rounded-lg">
+                Subscribe
               </button>
             </div>
           </div>
         </div>
 
-        {/* Divider + copyright */}
-        <div className="mt-14 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Bottom */}
+        <div className="mt-16 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-xs">
             © {year} West K9. All rights reserved.
           </p>
+
           <p className="text-slate-600 text-xs">
             Site crafted by{" "}
             <Link
               href="https://www.digitalcheuxes.co.ke"
               target="_blank"
-              rel="noopener noreferrer"
-              className="text-emerald-500 hover:text-emerald-400 transition-colors duration-200"
+              className="text-emerald-500 hover:text-emerald-400"
             >
               digitalcheuxes
             </Link>
