@@ -2,8 +2,12 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Initialize Resend with your API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+const hasResendConfig = Boolean(
+  process.env.RESEND_API_KEY &&
+  process.env.RESEND_FROM_EMAIL &&
+  process.env.RESEND_TO_EMAIL
+);
+const resend = hasResendConfig ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(request) {
   try {
@@ -14,6 +18,18 @@ export async function POST(request) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
+      );
+    }
+
+    if (!hasResendConfig) {
+      console.warn('Resend is disabled: missing RESEND_API_KEY or email env vars.');
+      return NextResponse.json(
+        {
+          success: true,
+          devMode: true,
+          message: 'Email sending is disabled during development because Resend env vars are missing.',
+        },
+        { status: 200 }
       );
     }
 
