@@ -41,9 +41,9 @@ function Grooming() {
         {/* Image Section - Centered */}
         <div className='flex justify-center items-center'>
           <Image 
-            src='/uprightdog.png'
+            src='/twins.jpeg'
             alt='dog'
-            width={250}
+            width={300}
             height={450}
             className='object-contain'
             quality={70}
@@ -98,7 +98,7 @@ function Grooming() {
             <span className='font-semibold'>Deluxe Spa Package</span> – Full grooming + teeth brushing, deep conditioning, and paw massage.
           </p>
           <p className='text-center text-gray-400 mt-4'>
-            💦 Add-Ons Available: De-shedding, flea treatment, specialty shampoos, and more!
+             Add-Ons Available: De-shedding, flea treatment, specialty shampoos, and more!
           </p>
           <p className='text-center text-blue-400 font-bold mt-6'>📍 Book your pet's spa day today! Westk9 has got you covered.</p>
         </CardContent>

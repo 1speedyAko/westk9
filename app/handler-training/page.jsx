@@ -36,7 +36,7 @@ function Handler() {
         {/* Image Section */}
         <div className='flex justify-center items-center'>
           <Image 
-            src="/black.jpg"
+            src="/verthos.jpeg"
             alt='dog'
             width={250}
             height={450}

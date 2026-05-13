@@ -21,7 +21,7 @@ const stats = [
   },
   {
     icon: faClock,
-    value: 6,
+    value: 7,
     suffix: '+',
     label: 'Years of Experience',
     description: 'Dedicated to canine excellence',

@@ -45,7 +45,7 @@ const Training = () => {
         {/* Image Section */}
         <div className="flex justify-center items-center sm:mb-6">
           <Image
-            src="/training.jpg"
+            src="/shakira.jpeg"
             alt="dog"
             width={240}
             height={450}

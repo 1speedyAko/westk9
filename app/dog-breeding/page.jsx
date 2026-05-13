@@ -22,8 +22,7 @@ function Breeding() {
         <div className="text-center md:text-left px-6"> {/* Added padding */}
           <h2 className="text-3xl font-bold text-white">Dog Breeding</h2>
           <p className="font-semibold text-neutral-200 mt-4">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat soluta sunt quibusdam dolores suscipit?
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam animi quas excepturi sit veniam eligendi placeat optio nemo sunt dicta. Quas dolorem odit consequatur iure blanditiis.
+           Some info about dog breeding here
           </p>
         </div>
 
