@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillInstagram } from "react-icons/ai";
-import { BsFacebook, BsTwitter } from "react-icons/bs";
+import { BsFacebook, BsYoutube } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -40,10 +40,11 @@ const Footer = () => {
               </Link>
 
               <Link
-                href="#"
+                href="https://www.youtube.com/@Westk9"
+                target="_blank"
                 className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/30 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition"
               >
-                <BsTwitter />
+                <BsYoutube />
               </Link>
             </div>
           </div>
