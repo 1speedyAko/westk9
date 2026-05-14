@@ -22,7 +22,7 @@ function Breeding() {
         <div className="text-center md:text-left px-6"> {/* Added padding */}
           <h2 className="text-3xl font-bold text-white">Dog Breeding</h2>
           <p className="font-semibold text-neutral-200 mt-4">
-           Some info about dog breeding here
+            Dog breeding is a meticulous process that involves selecting parent dogs with specific traits to produce puppies with desirable characteristics. It requires knowledge of genetics, health screening, and proper care to ensure the well-being of both the parents and the puppies. Responsible breeders prioritize the health, temperament, and quality of life of their dogs, contributing to the betterment of the breed.
           </p>
         </div>
 
